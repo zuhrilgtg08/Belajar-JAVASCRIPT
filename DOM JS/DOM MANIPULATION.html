@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM MANIPULATION</title>
+
+    <style>
+        * {
+            border: 2px solid #dedede;
+            padding: 15px;
+            margin: 15px;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            max-width: 600px;
+            margin: 30px auto;
+            font-family: sans-serif;
+            color: #333;
+        }
+
+        .biru-muda {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="judul">Hello World</h1>
+
+    <div id="container">
+        <section id="a">
+            <p class="p1">paragraf 1</p>
+            <a href="http://instagram.com/zuhrillfilm">instagram Ahmad Zuhril</a>
+            <p class="p2">paragraf 2</p>
+            <p class="p3">paragraf 3</p>
+        </section>
+        <section id="b">
+            <p>paragraf 4</p>
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        const judul = document.getElementById('judul');
+        judul.innerHTML = '<em>Ahmad Zuhril</em>';
+
+        const sectionA = document.querySelector('section#a');
+        sectionA.innerHTML = '<div><p>Paragraf baru</p></div>';
+
+        const judulBaru = document.querySelector('#judul');
+        judulBaru.style.backgroundColor = 'lightblue';
+
+        const judulNew = document.getElementsByTagName('h1')[0];
+        judulNew.setAttribute('name', 'True');
+
+        const a = document.querySelector('section#a a');
+        a.setAttribute('id', 'link');
+        a.getAttribute('href');
+        judul.getAttribute('id');
+        a.removeAttribute('href');
+
+        const p2 = document.querySelector('.p2');
+        p2.classList.add('label');
+        p2.classList.remove('label');
+        p2.classList.toggle('label');
+
+        document.body.style.backgroundColor = 'lightblue';
+        document.body.classList.toggle('biru-muda');
+
+        p2.classList.add('satu');
+        p2.classList.add('dua');
+        p2.classList.add('tiga');
+        p2.classList.item(2);
+        p2.classList.contains('dua');
+        p2.classList.replace('tiga', 'empat');
+    </script>
+</body>
+
+</html>

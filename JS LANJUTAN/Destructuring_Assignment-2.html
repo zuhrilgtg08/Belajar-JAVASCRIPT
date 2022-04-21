@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Function</title>
+</head>
+
+<body>
+    <script>
+        // Destructuring Function
+        // function kalkulasi(a, b) {
+        //     return [a + b, a - b, a * b, a / b];
+        // }
+
+        // const jumlah = jumlahKali(2, 3)[0];
+        // const kali = jumlahKali(2, 3)[1];
+
+        // const [jumlah, kali] = jumlahKali(4, 5);
+        // console.log(jumlah);
+        // console.log(kali);
+
+        // const [tambah, kali, kurang, bagi = 'not found!'] = kalkulasi(2, 3);
+        // console.log(bagi);
+
+        // return value object
+        // function kalkulasi(a, b) {
+        //     return {
+        //         tambah: a + b,
+        //         kurang: a - b,
+        //         kali: a * b,
+        //         bagi: a / b
+        //     }
+        // }
+
+        // const {bagi, tambah, kali, kurang} = kalkulasi(2,3);
+        // console.log(kurang);
+
+        // Destructruting function argument
+        const mhs1 = {
+            nama: 'Ahmad',
+            umur: 20,
+            email: 'ahmad@gmail.com',
+            nilai: {
+                tugas: 80,
+                uts: 90,
+                uas: 75
+            }
+        }
+
+        // function cetakMhs(mhs) {
+        //     return `Halo, nama saya ${mhs.nama}, umur saya ${mhs.umur} tahun`;
+        // }
+
+        // console.log(cetakMhs(mhs1));
+
+        function cetakMhs({
+            nama,
+            umur,
+            nilai: {
+                tugas,
+                uts,
+                uas
+            }
+        }) {
+            return `Halo, nama saya ${nama}, umur saya ${umur} tahun. Dan nilai Uas saya adalah ${uas}`;
+        }
+
+        console.log(cetakMhs(mhs1));
+    </script>
+</body>
+
+</html>

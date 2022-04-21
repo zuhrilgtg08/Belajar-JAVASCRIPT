@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous JavaScript</title>
+</head>
+
+<body>
+    <h1>Asynchronous JavaScript</h1>
+    <script>
+        console.log('satu');
+        console.log('dua');
+        console.log('tiga');
+        // baris di atas ada dialam Stack Memory dan akalu sudah di eksekusi perintah diatas dihapus dari Stack
+
+        function kalikan(a, b) {
+            return a * b;
+        }
+
+        function hitungLuas(sisi) {
+            return kalikan(sisi, sisi);
+        }
+
+        function cetakLuasKotak(sisi) {
+            const luas = hitungLuas(sisi);
+            console.log(luas);
+        }
+
+        cetakLuasKotak(5);
+
+        // contoh teknik blocking
+        console.log('empat');
+        prosesKompleks();
+        console.log('lima');
+
+        // Asynschronous Callback
+        console.log('enam');
+        setTimeOut(() => {
+            prosesKompleks();
+        }, 0);
+        console.log('Tujuh');
+
+        console.log('Sembilan');
+        setTimeout(() => {
+            console.log('Dua Satu');
+        }, 5000);
+        console.log('Tiga Satu');
+    </script>
+</body>
+
+</html>

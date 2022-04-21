@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Map, Filter, Reduce 2</title>
+</head>
+
+<body>
+    <h3>List Data Sepatu</h3>
+    <ul>
+        <li data-sepatu="45">Akmal</li>
+        <li data-sepatu="34">Imam</li>
+        <li data-sepatu="21">Nando</li>
+        <li data-sepatu="38">Akmal</li>
+        <li data-sepatu="40">Nando</li>
+        <li data-sepatu="43">Imam</li>
+        <li data-sepatu="30">Zuhril</li>
+        <li data-sepatu="26">Akmal</li>
+        <li data-sepatu="33">Nando</li>
+        <li data-sepatu="39">Zuhril</li>
+        <li data-sepatu="31">Zuhril</li>
+        <li data-sepatu="35">Zuhril</li>
+    </ul>
+
+    <h3>Ambil Data Zuhril</h3>
+    <ol>
+        <li>
+            <h4>Data Sepatu Zuhril</h4>
+            <p>Nama : <span class="nama"></span></p>
+            <p>Data Ukuran : <span class="total-data"></span></p>
+        </li>
+    </ol>
+    <script>
+        // ambil semua data dan tampilkan dalam bentuk array
+        const allDataSepatu = Array.from(document.querySelectorAll('[data-sepatu]'));
+
+        // cari yang namanya zuhril
+        let dataZuhril = allDataSepatu.filter(data => data.textContent.includes('Zuhril'))
+
+            // ambil semua ukuran data sepatunya
+            .map(itemData => itemData.dataset.sepatu);
+
+        // lalu masukkan semua data dengan teknik dectruction
+        const [satu, dua, tiga, empat] = dataZuhril;
+
+        // simpan dalam DOM
+        const namaZuhril = document.querySelector('.nama');
+        namaZuhril.textContent = 'Zuhril Fahrizal';
+
+        const dataSepatu = document.querySelector('.total-data');
+        dataSepatu.textContent = `${satu}, ${dua}, ${tiga}, dan ${empat}`;
+    </script>
+</body>
+
+</html>

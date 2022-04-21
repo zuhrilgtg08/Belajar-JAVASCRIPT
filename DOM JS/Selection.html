@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection</title>
+
+    <style>
+        * {
+            border: 2px solid #dedede;
+            padding: 15px;
+            margin: 15px;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            max-width: 600px;
+            margin: 30px auto;
+            font-family: sans-serif;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="judul">Ahmad Zuhril</h1>
+
+    <div id="container">
+        <section id="a">
+            <p class="p1">paragraf 1</p>
+            <a href="http://instagram.com/zuhrillfilm">instagram Ahmad Zuhril</a>
+            <p class="p2">paragraf 2</p>
+            <p class="p3">paragraf 3</p>
+        </section>
+        <section id="b">
+            <p>paragraf 4</p>
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+            </ul>
+        </section>
+    </div>
+    <script>
+        // DOM selection
+
+        // getElementById => mengembalikan element
+        const judul = document.getElementById('judul');
+        judul.style.color = 'red';
+        judul.style.backgroundColor = '#ccc';
+        judul.innerHTML = 'Zuhril Fahrizal';
+
+        const section = document.getElementById('b');
+        section.style.backgroundColor = '#999';
+
+        // getElementsByTageName => mengembalikan HTMLCollections
+        const p = document.getElementsByTagName('p');
+        for (let i = 0; i < p.length; i++) {
+            p[i].style.backgroundColor = 'lightblue';
+        }
+
+        const h1 = document.getElementsByTagName('h1')[0];
+        h1.style.fontSize = '50px';
+
+        // getElementsByClassName => mengembalikan HTMLCollections
+        const p1 = document.getElementsByClassName('p1')[0];
+        p1.innerHTML = 'Ini diubah dalam javasscript';
+
+        // querySelector => mengembalikan element
+        const p4 = document.querySelector('#b p');
+        p4.style.color = 'green';
+        p4.style.fontSize = '30px';
+
+        const li2 = document.querySelector('section#b ul li:nth-child(2)');
+        li2.style.backgroundColor = 'orange';
+
+        const pOld = document.querySelector('p');
+        pOld.innerHTML = 'Ini diubah dengan javascript';
+
+        // querySelectorAll => mengembalikan Nodelist
+        const pNew = document.querySelectorAll('p');
+        for (let i = 0; i < pNew.length; i++) {
+            pNew[i].style.backgroundColor = 'lightblue';
+        }
+
+        // const pBaru = document.getElementsByTagName('p');
+        pBaru[3].style.backgroundColor = 'lightblue';
+
+        // const pBaru = document.querySelectorAll('p');
+        pBaru[3].style.backgroundColor = 'lightblue';
+
+        const sectionB = document.getElementById('b');
+        const p4 = sectionB.querySelector('p');
+        p4.style.backgroundColor = 'orange';
+    </script>
+</body>
+
+</html>

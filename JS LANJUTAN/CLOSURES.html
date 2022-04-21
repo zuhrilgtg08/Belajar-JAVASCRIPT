@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+
+<body>
+    <script>
+        var nama = 'Ahmad';
+        console.log(nama);
+
+        // Creation phase dalam kontext global
+        // Membuat nama apapun variable, lalu diisi dengan = undefined
+        // jadi, semua variable semuanya di set dulu dengan undefined
+        // namun, jika ada sebuah function maka diisi dengan isi code function itu sendiri
+        // 2 Konsep diatas disebut dengan hoisting(mengerekan/dinaikan);
+
+        // js mendeskripsikan window sebagai global object
+        // dan this sebagai window
+
+        // Setelah itu Execution phase
+        // dimana program dieksekusi dari atas ke bawah
+
+        var nama = 'zuhril';
+        var umur = 17;
+
+        console.log(hello());
+
+        function hello() {
+            return `halo, nama saya ${nama} umur ${umur} tahun.`;
+        }
+
+        // function membuat local execution context
+        // yang didalamnya terdapat creation dan execution phase
+        // bedanya dengan function kita bisa akses window dan arguments
+        // ada hoisting local
+
+        var nama = 'zuhril';
+        var username = '@zuhrillfilm';
+
+        function cetakURL() {
+            console.log(arguments);
+            var igURL = 'https://instagram.com/';
+            return igURL + username;
+        }
+
+        console.log(cetakURL('@sandhikagalih', '@erik'));
+
+        function a() {
+            console.log('ini a');
+
+            function b() {
+                console.log('ini b');
+
+                function c() {
+                    console.log('ini c');
+                }
+
+                c();
+            }
+
+            b();
+        }
+        a();
+
+        function satu() {
+            var nama = 'Ahmad';
+            console.log(nama);
+        }
+
+        function dua() {
+            console.log(nama);
+        }
+
+        console.log(nama);
+
+        var nama = 'dony';
+        satu();
+        dua('agus');
+        console.log(nama);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Bersarang</title>
+</head>
+
+<body>
+    <script>
+        // bentuk 1
+        var x = '';
+        for (var a = 1, b = 0; a <= 7; ++a, b = 0) {
+            for (var c = 1; c <= 7 - a; ++c) {
+                x += ' ';
+            }
+            while (b != 2 * a - 1) {
+                x += '*';
+                ++b;
+            }
+            x += '\n';
+        }
+        console.log(x);
+
+        // bentuk 2
+        var p = '';
+        for (var i = 1; i <= 7; i++) {
+            for (var j = 1; j <= i; j++) {
+                p += '*';
+            }
+            p += '\n';
+        }
+
+        var s = '';
+        for (var i = 7; i >= 0; i--) {
+            for (var j = 0; j <= i; j++) {
+                s += '*';
+            }
+            s += '\n';
+        }
+        console.log(p + s);
+
+        //bentuk 3
+        var z = '';
+        for (var i = 0; i < 7; i++) {
+            for (var j = 10; j > i; j--) {
+                z += ' ';
+            }
+            for (var s = 0; s <= i; s++) {
+                z += '*';
+            }
+            z += '\n';
+        }
+        console.log(z);
+
+        //bentuk 4
+        var a = '';
+        for (var i = 1; i <= 7; i++) {
+            for (var j = 1; j <= i; j++) {
+                a += '*';
+            }
+            a += '\n';
+        }
+        console.log(a);
+
+        //bentuk 5
+        var b = '';
+        for (var i = 7; i >= 0; i--) {
+            for (var j = 1; j <= i; j++) {
+                b += '*';
+            }
+            b += '\n';
+        }
+        console.log(b);
+
+        var x = '';
+        for (var a = 4; a >= 1; a--) {
+            for (var b = 1; b <= a - 1; b++) {
+                x += ' ';
+            }
+
+            for (var c = 1; c <= 8; c++) {
+                x += '* ';
+            }
+            x += '\n';
+        }
+        console.log(x);
+    </script>
+</body>
+
+</html>

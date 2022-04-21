@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Var Let Const</title>
+</head>
+
+<body>
+    <script>
+        function tes() {
+            for (var i = 1; i <= 10; i++) {
+                console.log(i);
+            }
+        }
+        tes();
+        // console.log(i);
+
+        for (let i = 0; i < 10; i++) {
+            console.log(i);
+        }
+        // console.log(i);
+
+        var x = function () {
+
+        }
+
+        (function () {
+            for (var i = 0; i < 10; i++) {
+                console.log(i);
+            }
+        }());
+        // console.log(i);
+
+        // bedanya dengan const ?
+        // const angka = 20;
+        // angka = 20;
+
+        // misal menggunakan const dalam object
+        const mhs = {
+            nama: "Ahmad",
+            umur: 23
+        }
+
+        mhs.umur = 29;
+        // mhs = {
+        //     jurusan: "Kimia"
+        // }
+
+        console.log(mhs);
+
+        const array = [1, 2, 3];
+        array.push(4);
+        console.log(array);
+    </script>
+</body>
+
+</html>

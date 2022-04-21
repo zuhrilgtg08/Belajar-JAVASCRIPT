@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread OPerator & Rest Parameter</title>
+
+    <style>
+        body {
+            background-color: salmon;
+            text-align: center;
+        }
+
+        .nama {
+            font-family: arial;
+            font-size: 80px;
+            color: #fff;
+            padding-right: 12px;
+        }
+
+        .nama span {
+            display: inline-block;
+            transition: .3s all ease;
+            cursor: pointer;
+        }
+
+        .nama span:hover {
+            transform: scale(2) translateY(-20px);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Spread Parameter</h1>
+
+    <h3 class="nama">Zuhril</h3>
+
+    <!-- <ul>
+        <li>Fajar</li>
+        <li>Ari</li>
+        <li>Imam</li>
+    </ul> -->
+    <script>
+        // Spread Parameters
+        // Memecah iterables menjadi single element
+
+        // const mhs = ['ahmad', 'zuhril', 'rizal'];
+        // console.log(...mhs);
+        // console.log(...mhs[0]);
+
+        // dengan menggunakan 2 array
+        // const mhs = ['ahmad', 'zuhril', 'rizal'];
+        // const guru = ['ari', 'ilham', 'abu'];
+        // // dengan menggunakan spread operator maka kiat bisa menginputkan data acak
+        // const all = [...mhs, 'imam', ...guru];
+        // // jika dengan method concat tidak semudah itu untuk memasukkan data acak
+        // const orang = mhs.concat(guru);
+        // console.log(all);
+
+        // meng-copy array
+        // const mhs = ['ahmad', 'zuhril', 'rizal'];
+        // const mhs1 = [...mhs];
+        // mhs1[0] = 'Zidan';
+        // console.log(mhs1);
+        // console.log(mhs);
+
+        // dengan studi kasus html
+        // const nama = document.querySelectorAll('li');
+        // console.log(nama);
+
+        // dengan for biasa
+        // const mhs = [];
+        // for (let i = 0; i < nama.length; i++) {
+        //     mhs.push(nama[i].textContent);
+        // }
+
+        // map
+        // const mhs = [...nama].map(m => m.textContent);
+        // console.log(mhs);
+
+        // dengan for of
+        // for(const m of nama){
+        // console.log(m.textContent);
+        // }
+
+        const nama = document.querySelector('.nama');
+        const huruf = [...nama.textContent].map(h => `<span>${h}</span>`).join('');
+        nama.innerHTML = huruf;
+    </script>
+</body>
+
+</html>

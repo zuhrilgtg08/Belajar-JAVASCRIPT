@@ -1,0 +1,22 @@
+[{
+        "nama": "Ahmad Zuhril Fahrizal",
+        "nis": "043840023",
+        "email": "zuhril@gmail.com",
+        "jurusan": "Teknik Informatika",
+        "id": 1
+    },
+    {
+        "nama": "Abu Hidayat",
+        "nis": "043840021",
+        "email": "abu@gmail.com",
+        "jurusan": "Teknik Mesin",
+        "id": 2
+    },
+    {
+        "nama": "Aditya Pratama",
+        "nis": "043840022",
+        "email": "adit@gmail.com",
+        "jurusan": "Teknik Robtika",
+        "id": 3
+    }
+]

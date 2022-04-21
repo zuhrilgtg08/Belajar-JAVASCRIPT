@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Strings</title>
+
+    <style>
+        .hl {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // Tagged Templates
+        // const nama = 'Ahmad';
+        // const umur = 20;
+
+        // function coba(string, ...values) {
+        //     // let hasil = '';
+        //     // string.forEach((str, i) => {
+        //     //     hasil += `${str}${values[i] || ''}`;
+        //     // });
+        //     // return hasil;
+
+        //     return string.reduce((result, str, i) => `${result}${str}${values[i]} || `, '');
+        // }
+
+        // const str = coba `Halo nama saya ${nama}, saya umur ${umur} tahun.`;
+        // console.log(str);
+
+        // highlight
+        const nama = 'Ahmad';
+        const umur = 20;
+        const email = 'ahmad@gmail.com';
+
+        function highlight(string, ...values) {
+            return string.reduce((result, str, i) => `${result}${str} <span class="hl">${values[i] || ''}</span>`, '');
+        }
+
+        const str = highlight `Halo nama saya ${nama}, saya umur ${umur} tahun. Dan email saya adalah ${email}`;
+        document.body.innerHTML = str;
+    </script>
+</body>
+
+</html>

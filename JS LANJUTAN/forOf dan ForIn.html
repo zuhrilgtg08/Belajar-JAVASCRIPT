@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For ..of & For ..in</title>
+</head>
+
+<ul>
+    <li class="nama">Ahmad</li>
+    <li class="nama">Budi</li>
+    <li class="nama">Hartono</li>
+</ul>
+
+<body>
+    <script>
+        // For Of
+        // 1. Array
+        // const mahasiswa = ['Ahmad', 'Zuhril', 'Fahrizal'];
+
+        // Dengan for biasa
+        // for (let i = 0; i < mahasiswa.length; i++) {
+        //     console.log(mahasiswa[i]);
+        // }
+
+        // Dengan ForEach
+        // mahasiswa.forEach(m => console.log(m));
+
+        // Dengan For of
+        // for (const mhs of mahasiswa) {
+        //     console.log(mhs);
+        // }
+
+        // 2. String
+        // const namaSaya = 'Ahmad Zuhril';
+        // for (const nama of namaSaya) {
+        //     console.log(nama);
+        // }
+
+        // // contoh parameter tambahan dengan forEach
+        // const mahasiswa = ['Ahmad', 'Zuhril', 'Fahrizal'];
+        // mahasiswa.forEach((mhs, i) => console.log(`${mhs}, siswa ke ${i}`));
+
+        // // secara default for of tidak punya index, tapi dengan menggunakan enteries, kita bisa mengakses seperti diatas
+        // for (const [i, m] of mahasiswa.entries()) {
+        //     console.log(`${m} adalah mahasiswa ke ${i}`);
+        // }
+
+        // 3. Nodelist
+        // const nama = document.querySelectorAll('.nama');
+
+        // dengan for each
+        // nama.forEach(n => console.log(n.textContent));
+
+        // dengan for Of
+        // for (n of nama) {
+        //     console.log(n.innerHTML);
+        // }
+
+        // 4. Arguments
+        // function jumlahAngka() {
+        //     // return arguments.reduce((a, i) => a + i);
+        //     let jumlah = 0;
+        //     for (a of arguments) {
+        //         jumlah += a;
+        //     }
+        //     return jumlah;
+        // }
+
+        // console.log(jumlahAngka(1, 2, 3, 4, 5));
+
+        // For in
+        // const mhs = {
+        //     nama: 'ahmad',
+        //     umur: 20,
+        //     email: 'ahmad@gmail.com'
+        // }
+
+        // dengan for in
+        // for (m in mhs) {
+        //     console.log(m);
+        //     console.log(mhs[m]);
+        // }
+    </script>
+</body>
+
+</html>

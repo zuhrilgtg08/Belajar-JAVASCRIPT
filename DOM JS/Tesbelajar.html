@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saklar Lampu</title>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container .kotak1 {
+            margin-top: 150px;
+            border: 3.5px solid rgba(20, 85, 170, 0.664);
+            border-radius: 1.5rem;
+            width: 200px;
+        }
+
+        .container .kotak1 img {
+            border-radius: 1rem;
+            position: relative;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="kotak1">
+            <h1 class="judul">Lampu Mati</h1>
+            <img src="semuaGambar/OFFbulb.jpg" alt="lamp" id="lamp-mati" width="200">
+        </div>
+    </div>
+
+    <script>
+        const ofLamp = document.getElementById('lamp-mati');
+        const ket = document.querySelector('.judul');
+        ofLamp.addEventListener('click', function () {
+            if (ofLamp.src.match('ONbulb')) {
+                ofLamp.src = 'semuaGambar/OFFbulb.jpg';
+                document.body.style.backgroundColor = 'yellow';
+                ket.textContent = 'Lampu Mati';
+                ket.style.color = '#333';
+            } else {
+                ofLamp.src = 'semuaGambar/ONbulb.jpg';
+                document.body.style.backgroundColor = '#333';
+                ket.style.color = '#fff';
+                ket.textContent = 'Lampu Hidup';
+            }
+        });
+    </script>
+</body>
+
+</html>

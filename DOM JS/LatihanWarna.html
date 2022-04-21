@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LATIHAN RUBAH WARNA</title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        .default {
+            background-color: #ffffff;
+        }
+
+        .kotak {
+            width: 25px;
+            height: 25px;
+            margin: 10px auto;
+        }
+
+        .merah {
+            background-color: red;
+        }
+
+        .hijau {
+            background-color: green;
+        }
+
+        .biru {
+            background-color: blue;
+        }
+
+        h1 {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="judul">Bermain dengan warna</h1>
+
+    <button type="button" id="tombol-default">Ubah Default</button>
+
+    <br><br>
+
+    <div class="kotak merah"></div>
+    <input type="range" name="slider-merah" min="0" max="255">
+
+    <div class="kotak hijau"></div>
+    <input type="range" name="slider-hijau" min="0" max="255">
+
+    <div class="kotak biru"></div>
+    <input type="range" name="slider-biru" min="0" max="255">
+
+    <script>
+        const button = document.getElementById('tombol-default');
+        button.addEventListener('click', function () {
+            // document.body.style.backgroundColor = 'lightblue';
+            // document.body.setAttribute('class', 'biru-mudah');
+            document.body.classList.toggle('default');
+        });
+
+        const newButton = document.createElement('button');
+        const textButton = document.createTextNode('Acak Warna');
+        newButton.appendChild(textButton);
+        newButton.setAttribute('type', 'button');
+        button.after(newButton);
+
+        newButton.addEventListener('click', function () {
+            const r = Math.round(Math.random() * 255 + 1);
+            const g = Math.round(Math.random() * 255 + 1);
+            const b = Math.round(Math.random() * 255 + 1);
+            document.body.style.backgroundColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+        });
+
+        const sliderMerah = document.querySelector('input[name=slider-merah]');
+        const sliderHijau = document.querySelector('input[name=slider-hijau]');
+        const sliderBiru = document.querySelector('input[name=slider-biru]');
+
+        sliderMerah.addEventListener('input', function () {
+            const r = sliderMerah.value;
+            const g = sliderHijau.value;
+            const b = sliderBiru.value;
+            document.body.style.backgroundColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+        });
+
+        sliderHijau.addEventListener('input', function () {
+            const r = sliderMerah.value;
+            const g = sliderHijau.value;
+            const b = sliderBiru.value;
+            document.body.style.backgroundColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+        });
+
+        sliderBiru.addEventListener('input', function () {
+            const r = sliderMerah.value;
+            const g = sliderHijau.value;
+            const b = sliderBiru.value;
+            document.body.style.backgroundColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+        });
+
+        document.body.addEventListener('mousemove', function (event) {
+            // koordinat posisi mouse
+            // console.log(event.clientX);
+            // ukuran browser
+            // console.log(window.innerWidth);
+            const sumbuX = Math.round((event.clientX / window.innerWidth) * 255);
+            const sumbuY = Math.round((event.clientY / window.innerHeight) * 255);
+
+            document.body.style.backgroundColor = 'rgb(' + sumbuX + ', ' + sumbuY + ', 100)';
+        });
+
+        const h1 = document.getElementById('judul');
+        h1.addEventListener('click', function () {
+            const r = Math.round(Math.random() * 255 + 1);
+            const g = Math.round(Math.random() * 255 + 1);
+            const b = Math.round(Math.random() * 255 + 1);
+
+            h1.style.color = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+        })
+    </script>
+</body>
+
+</html>

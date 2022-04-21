@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher Order Function</title>
+</head>
+
+<body>
+
+    <button type="button" class="tombol">tekan saya</button>
+    <script>
+        const tombol = document.querySelector('.tombol');
+        tombol.addEventListener('click', function () {
+            console.log('Tombol berhasil ditekan');
+        });
+
+
+
+        function selesai() {
+            alert('Selesai Mengerjakan Tugas !');
+        }
+
+        function kerjakanTugas(matkul, selesai) {
+            console.log(`Mulai mengerjakan tugas ${matkul}`);
+            selesai();
+        }
+
+        kerjakanTugas('Ipa', selesai);
+
+        let total = 0;
+        let count = 1;
+
+        while (count <= 10) {
+            total += count;
+            count++;
+        }
+        console.log(total);
+
+        for (let i = 0; i < 10; i++) {
+            console.log(i);
+        }
+
+        function repeat(n, aksi) {
+            for (let i = 0; i < n; i++) {
+                aksi(i);
+            }
+        }
+
+        repeat(3, console.log);
+        repeat(5, alert)
+
+        function sayLove(n, action) {
+            for (let i = 1; i <= n; i++) {
+                action(`Aku suka kamu sebanyak ${i} x`);
+            }
+        }
+
+        sayLove(3, console.log);
+    </script>
+</body>
+
+</html>

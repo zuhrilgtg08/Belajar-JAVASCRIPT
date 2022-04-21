@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suwit Jawa</title>
+</head>
+
+<body>
+    <script>
+        var tanya = true;
+
+        while (tanya) {
+            //psuedo code suwit jawa
+
+            //menangkap pilihan player
+            var p = prompt('Silahkan pilih : gajah, semut, orang');
+
+            //menangkap pilihan dari komputer
+            var comp = Math.random();
+
+            //mengenerate bilangan random dari pilihan komputer
+            if (comp < 0.34) {
+                comp = 'gajah';
+            } else if (comp >= 0.34 && comp < 0.67) {
+                comp = 'orang';
+            } else {
+                comp = 'semut';
+            }
+            console.log(comp);
+
+            //menentukan rules
+            var hasil = '';
+            if (p == comp) {
+                hasil = 'SERI';
+            } else if (p == 'gajah') {
+                hasil = (comp == 'orang') ? 'MENANG' : 'KALAH';
+            } else if (p == 'orang') {
+                hasil = (comp == 'gajah') ? 'KALAH' : 'MENANG';
+            } else if (p == 'semut') {
+                hasil = (comp == 'orang') ? 'KALAH' : 'MENANG';
+            } else {
+                hasil = 'menginputkan pilihan yang salah !';
+            }
+
+            //tampilkan outputnya
+            alert('kamu memilih ' + p + ' dan komputer memilih : ' + comp + '\n Maka hasilnya adalah Kamu : ' + hasil);
+            tanya = confirm('Sekali Lagi ?');
+        }
+        alert('Terimakasih Udah Bermain !');
+    </script>
+</body>
+
+</html>

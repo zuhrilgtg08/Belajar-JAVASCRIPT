@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tebak Angka</title>
+</head>
+
+<body>
+    <script>
+        var lagi = true;
+
+        //sudo code
+        while (lagi) {
+            alert('Selamat Datang di Game Tebak Angka');
+
+            //tangkap pilohan player
+            var p = prompt('Masukkan Angka 1 - 10 \n Anda memiliki 3 kesempatan untuk menebak');
+
+            //tangkap tebakan komputer dan generate angkanya
+            var comp = Math.floor(Math.random() * 10) + 1;
+
+            //bikin rules
+            var hasil = '';
+            for (var kesempatan = 3; kesempatan >= 1; kesempatan--) {
+                if (p == comp) {
+                    hasil = 'BENAR';
+                    alert('Tebakan anda ' + hasil + '.');
+                    break;
+                } else if (p != comp && kesempatan > 1) {
+                    hasil = (p < comp) ? 'TERLALU RENDAH' : 'TERLALU TINGGI';
+                    p = prompt('Tebakan anda ' + hasil + '\n Coba Tebak Lagi !');
+                } else if (p != comp && kesempatan == 1) {
+                    hasil = 'SALAH';
+                    alert('Tebakan anda ' + hasil + '\n Kesempatan anda telah habis');
+                } else {
+                    hasil = 'Input Harus Angka TIDAK BOLEH YANG LAIN!';
+                }
+            }
+            //tampilkan hasil
+            lagi = confirm('Main Lagi ? ');
+        }
+        alert('Termikasih Sudah Bermain');
+    </script>
+</body>
+
+</html>

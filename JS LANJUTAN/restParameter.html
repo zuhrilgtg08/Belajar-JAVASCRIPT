@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread OPerator & Rest Parameter</title>
+</head>
+
+<body>
+    <h1>Rest Parameter</h1>
+    <script>
+        // Rest Parameter
+        // function myFunc(a, b, ...myArgs) {
+        //     return `nilai a = ${a}, dan b = ${b} sisanya adalah ${myArgs}`;
+        // }
+
+        // function myFunc(...myArgs) {
+        //     // return `nilai a = ${a}, dan b = ${b} sisanya adalah ${myArgs}`;
+        //     // return myArgs => array;
+        //     // return Array.from(arguments);
+        //     return [...arguments];
+        // }
+
+        // console.log(myFunc(1, 2, 3, 4, 5));
+
+        // function jumlah(...angka) {
+        //     // dengan for of
+        //     // let total = 0;
+        //     // for (a of angka) {
+        //     //     total += a;
+        //     // }
+        //     // return total;
+
+        //     // dengan reduce
+        //     // return angka.reduce((a, b) => a + b);
+        // }
+
+        // console.log(jumlah(1, 2, 3, 4, 5));
+
+        // array destsructuring
+        // const kelompok1 = ['Yuta', 'Rika', 'Maki', 'Yuji', 'Geto'];
+        // const [ketua, wakil, ...anggota] = kelompok1;
+        // console.log(ketua);
+        // console.log(wakil);
+        // console.log(anggota);
+
+        // Object destructuring
+        // const team = {
+        //     pm: 'Yuta',
+        //     frontend1: 'Yuji',
+        //     frontend2: 'Megumi',
+        //     backEnd: 'Gojou',
+        //     ux: 'Geto',
+        //     devOps: 'Maki'
+        // };
+
+        // const {pm, ...myTeam} = team;
+        // console.log(pm);
+        // console.log(myTeam);
+
+        // filtering
+        function filterBy(type, ...values) {
+            return values.filter(f => typeof f === type);
+        }
+
+        console.log(filterBy('number', 1, 2, false, 10, true, 'Yuta', 'Yuji'));
+    </script>
+</body>
+
+</html>

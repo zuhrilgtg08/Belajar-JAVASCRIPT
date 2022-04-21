@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Literals</title>
+</head>
+
+<body>
+    <script>
+        // HTML FRAGMENTS
+        // const Mahasiswa = {
+        //     nama: 'Ahmad Zuhril',
+        //     umur: 20,
+        //     nis: '043040023',
+        //     email: 'zuhril@gmail.com'
+        // };
+
+        // const el = `<div class="mhs">
+        //         <h2>${Mahasiswa.nama}</h2>
+        //         <span>${Mahasiswa.umur}</span>
+        //     </div>`;
+
+        // Looping
+        // const mhs = [{
+        //         nama: 'Ahmad Zuhril',
+        //         email: 'zuhril@gmail.com'
+        //     },
+        //     {
+        //         nama: 'Fahrizal Ahmad',
+        //         email: 'fahrizal@gmail.com'
+        //     },
+        //     {
+        //         nama: 'Nanatsu no Taizai',
+        //         email: 'domestic@gmail.com'
+        //     }
+        // ];
+
+        // const el = `<div class="mhs">
+        //         ${mhs.map(m => `<ul>
+        //                 <li>${m.nama}</li>
+        //                 <li>${m.email}</li>
+        //             </ul>`).join('')}
+        //     </div>`;
+
+        // Conditional
+        // const lagu = {
+        //     judul: 'Rock',
+        //     penyanyi: 'Sasaki',
+        //     feat: 'Rayi Putra'
+        // };
+
+        // const el = `<div class="lagu">
+        //         <ul>
+        //             <li>${lagu.penyanyi}</li>
+        //             <li>${lagu.judul} ${lagu.feat ? `(feat. ${lagu.feat})` : ''}</li>
+        //         </ul>
+        //     </div>`;
+
+        // Nested HTML Fragments 
+        const newMhs = {
+            nama: 'Ahmad Zuhril',
+            semester: 4,
+            mataKuliah: [
+                'Rekayasa Web',
+                'Sistem Informasi',
+                'Teknik Kimia'
+            ]
+        };
+
+        function cetakMatkul(mataKuliah) {
+            return `
+                <ol>
+                    ${mataKuliah.map(mk => `<li>${mk}</li>`).join('')}
+                </ol>
+            `;
+        }
+
+        const el = `<div class="mhs">
+                <h2>${newMhs.nama}</h2>
+                <span class="semester">Semester: ${newMhs.semester}<span>
+                <h4>Mata Kuliah :</h4>
+                ${cetakMatkul(newMhs.mataKuliah)}
+            </div>`;
+
+
+        document.body.innerHTML = el;
+    </script>
+</body>
+
+</html>

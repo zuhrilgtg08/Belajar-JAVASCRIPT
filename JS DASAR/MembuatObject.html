@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mmebuat Object</title>
+</head>
+
+<body>
+    <script>
+        // 1. Object Litral
+        var mhs1 = {
+            nama: 'Ahmad Zuhril',
+            nis: '06082004',
+            email: 'ahmadZuhril@gmail.com',
+            jurusan: 'Teknik Informatika'
+        }
+
+        var mhs2 = {
+            nama: 'Ahmad Nando',
+            nis: '07092004',
+            email: 'ahmadNando@gmail.com',
+            jurusan: 'Teknik Industri'
+        }
+
+        // 2. Function Declaration
+        function buatObjectBaru(nama, nis, email, jurusan) {
+            var mhs = {};
+            mhs.nama = nama;
+            mhs.nis = nis;
+            mhs.email = email;
+            mhs.jurusan = jurusan;
+            return mhs;
+        }
+
+        var mhs3 = buatObjectBaru('Nando Septian', '09082004', 'nando@gmail.com', 'Teknik Kimia');
+
+        // 3.Constructor
+        function Mahasiswa(nama, nis, email, jurusan) {
+            this.nama = nama;
+            this.nis = nis;
+            this.email = email;
+            this.jurusan = jurusan;
+        }
+
+        var mhs4 = new Mahasiswa('Akmal Luthfi', '12032004', 'akmal@gmail.com', 'Teknik Robotika');
+    </script>
+</body>
+
+</html>

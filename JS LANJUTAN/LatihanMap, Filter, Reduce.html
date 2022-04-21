@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Map, Filter, Reduce</title>
+</head>
+
+<body>
+    <h3>My Videos</h3>
+    <ul>
+        <li data-duration="15:27">Teknik Promodoro</li>
+        <li data-duration="11:18">JAVASCRIPT LANJUTAN | Higher Order Function</li>
+        <li data-duration="21:40">JAVASCRIPT LANJUTAN | This pada arrow Function</li>
+        <li data-duration="19:38">Website Penipu</li>
+        <li data-duration="12:10">JAVASCRIPT LANJUTAN | Arrow Function</li>
+        <li data-duration="20:43">JAVASCRIPT LANJUTAN | Closure</li>
+        <li data-duration="14:30">#TANYAPADIKA EP005</li>
+        <li data-duration="26:38">JAVASCRIPT LANJUTAN | Execution Context</li>
+        <li data-duration="17:33">JAVASCRIPT LANJUTAN | Prototype</li>
+        <li data-duration="10:39">JAVASCRIPT LANJUTAN | Object.create()</li>
+        <li data-duration="17:31">JAVASCRIPT LANJUTAN | Object (Revisi)</li>
+        <li data-duration="14:25">5 tips ketika error</li>
+    </ul>
+
+    <h3>My Playlist</h3>
+    <ol>
+        <li>
+            <h4>JAVASCRIPT LANJUTAN</h4>
+            <p>Jumlah Video : <span class="jumlah-video"></span></p>
+            <p>Total Durasi : <span class="total-durasi"></span></p>
+        </li>
+    </ol>
+
+    <script>
+        // ambil semua element video
+        const videos = Array.from(document.querySelectorAll('[data-duration]'));
+
+        // pilih hanya yang judulnya js lanjutan
+        let jsLanjutan = videos.filter(function (video) {
+                return video.textContent.includes('JAVASCRIPT LANJUTAN');
+            })
+
+            // ambil durasi masing masing video 
+            .map(item => item.dataset.duration)
+
+            // ubah durasi ke float, ubah menit ke detik
+            .map(waktu => {
+                // 10:30 => [10, 30] ini disebut split / atau dipecah
+                const pecahan = waktu.split(':').map(part => parseFloat(part));
+                return (pecahan[0] * 60) + pecahan[1];
+            })
+            // jumlahkan semua detik nya
+            .reduce((total, detik) => total + detik, 0);
+
+        // ubah formatnya jam, menit, detik
+        const jam = Math.floor(jsLanjutan / 3600);
+        jsLanjutan = jsLanjutan - (jam * 3600);
+        const menit = Math.floor(jsLanjutan / 60);
+        const detik = jsLanjutan - menit * 60;
+
+        // masukkan / simpan ke DOM
+        const durasi = document.querySelector('.total-durasi');
+        durasi.textContent = `${jam} Jam, ${menit} Menit, ${detik} detik`;
+
+        const jmlVideo = videos.filter(video => video.textContent.includes('JAVASCRIPT LANJUTAN')).length;
+        const jumlahVideo = document.querySelector('.jumlah-video');
+        jumlahVideo.textContent = `${jmlVideo} Video`;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+
+<body>
+    <script>
+        //contoh kasus
+        function jumlahDuakubus(a, b) {
+            var volumeA;
+            var volumeB;
+            var total;
+
+            volumeA = a * a * a;
+            volumeB = b * b * b;
+
+            total = volumeA + volumeB;
+            return total;
+        }
+
+        function tambah(a, b) {
+            return a + b;
+        }
+
+        function kali(a, b) {
+            return a * b;
+        }
+
+        function newTambah() {
+            var hasil = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                hasil += arguments[i];
+            }
+            return hasil;
+        }
+        var a = parseInt(prompt('Masukkan Nilai A : '));
+        var b = parseInt(prompt('Masukkan Nilai B : '));
+        var hasil = kali(tambah(2, 5), tambah(3, 8));
+        var total = tambah(a, b);
+        var coba = newTambah(1, 2, 3, 5, 6);
+        console.log(coba);
+        console.log(hasil);
+        alert(total);
+        alert(jumlahDuakubus(8, 3));
+        alert(jumlahDuakubus(4, 7));
+    </script>
+</body>
+
+</html>

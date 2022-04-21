@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAY</title>
+</head>
+
+<body>
+    <script>
+        // pengelolaan array
+
+        // 1 insert isi array
+        var arr = [];
+        arr[0] = "Ahmad";
+        arr[1] = "Zuhril";
+        arr[2] = "Fahrizal";
+        //jika kita isi array tidak sesuai urutan maka isi array yang kelewat diisi dengan undefined
+        console.log(arr);
+
+        //2 Delete isi array
+        var array = ["Ahmad", "Zuhril", "Fahrizal"];
+
+        // array[1] = undefined;
+        console.log(array);
+
+        //3 Menampilkan isi array
+        var array = ["Ahmad", "Zuhril", "Fahrizal"];
+
+        for (var i = 0; i < array.length; i++) {
+            console.log('Mahasiswa Ke-' + (i+1) + ' : ' + array[i]);
+        }
+
+        //4. Method Pada array di js
+        var array = ["Ahmad", "Zuhril", "Fahrizal"];
+        //join menggabungkan seluruh array dan merubahnya menjadi string
+        //sperataornya bebas
+        console.log(array.join('_'));
+
+        //push, pop
+        //push digunakan untuk menambah array di akhir array, sedangkan pop menghapus isi array di akhir array nya
+        var array = ["Ahmad", "Zuhril", "Fahrizal"];
+        array.push('Nando', 'Akmal');
+        array.pop();
+        console.log(array.join('_'));
+
+        //unshift dan shift
+        //sama dengan push dan pop kerjanya tapi dimulai dari nilai awal pada array
+        var array = ["Ahmad", "Zuhril", "Fahrizal"];
+        array.unshift('Nando');
+        array.shift(); //benar benar menghilangkan nilai arraynya
+        console.log(array.join('_'));
+
+        //slice dan splice
+        //digunakan ketika kita hanya membutuhkan beberapa nilai dari array yang kita butuhkan unutk menjadi array yang baru (slice)
+        //menyisipkan nilai elemen di tengah tengah array (splice)
+        var array = ["Ahmad", "Zuhril", "Fahrizal", "Nando", "Akmal"];
+        //slice(indexAwalKeberapa, indexAkhirKeberapa); index awal akan selalu terbawah didalam array baru, sedangkan yang terakhir tidak terbawah
+        // splice(indexAwal, mauDihapusBerapa, elemenBarulebihdari1);
+        // array.splice(2, 0, 'Nando', 'Akmal');
+        // array.splice(1,2, 'Nando', 'Akmal');
+        var array2 = array.slice(1,4);
+        // array.slice(1,3);
+        //yang satu nya kebawah dan yang tiga nya tidak
+        console.log(array.join(' - '));
+        console.log(array2.join('_'));
+
+        // forEach Map
+        var angka = [1, 2, 3, 4, 5, 6, 7, 8];
+        var nama = ["Ahmad", "Zuhril", "Fahrizal"];
+        for (var i = 0; i < angka.length; i++) {
+            console.log(angka[i]);
+        }
+        var cetak = function (e) {
+            console.log(e);
+        }
+
+        angka.forEach(function (e) {
+            console.log(e);
+        })
+
+        nama.forEach(function (e, i) {
+            console.log('Mahasiswa ke - ' + (i+1) + ' adalah : ' + e);
+        })
+
+        // map mengembalikan nilai array
+
+        var angka = [1, 2, 3, 4, 6, 7, 9];
+        var angka2 = angka.map(function (e) {
+            return e * 2;
+        });
+        console.log(angka2.join(' - '));
+
+        // sort artinya mengurutkan
+        var angka = [1, 4, 5, 3, 7, 20, 2, 9, 30];
+        console.log(angka.join('_'));
+        angka.sort(function (a, b) {
+            return a - b;
+        });
+        console.log(angka.join(' - '));
+
+        // filter= mengembalikan banyak nilai dan find = mengembalikan 1 nilai
+        // digunakan untuk mencari nilai didalam array
+        var angka = [1, 2, 10, 5, 20, 3, 6, 7, 4, 8];
+        var angka2 = angka.filter(function (x) {
+            return x > 5;
+        });
+        console.log(angka2.join(' - '));
+        var angka2 = angka.find(function (y) {
+        return y == 5;
+        });
+        console.log(angka2);
+    </script>
+</body>
+
+</html>

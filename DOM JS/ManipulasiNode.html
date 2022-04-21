@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulasi Node</title>
+
+    <style>
+        * {
+            border: 2px solid #dedede;
+            padding: 15px;
+            margin: 15px;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            max-width: 600px;
+            margin: 30px auto;
+            font-family: sans-serif;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="judul">Hello World</h1>
+
+    <div id="container">
+        <section id="a">
+            <p class="p1">paragraf 1</p>
+            <a href="http://instagram.com/zuhrillfilm">instagram Ahmad Zuhril</a>
+            <p class="p2">paragraf 2</p>
+            <p class="p3">paragraf 3</p>
+        </section>
+        <section id="b">
+            <p>paragraf 4</p>
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        // Manipulasi Node
+
+        // 1. buat elemen baru
+        const paragrafBaru = document.createElement('p');
+        const teksPBaru = document.createTextNode('Paragraf Baru');
+
+        // 2. simpan tulisan ke dalam paragraf
+        paragrafBaru.appendChild(teksPBaru);
+
+        // 3. simpan paragraf baru di akhir section A
+        const sectionA = document.getElementById('a');
+        sectionA.appendChild(paragrafBaru);
+
+        // Tambahkan Li Baru
+        const liBaru = document.createElement('li');
+        const newText = document.createTextNode('List Baru');
+        liBaru.appendChild(newText);
+        const sectionBUl = document.querySelector('section#b ul');
+        sectionBUl.appendChild(liBaru);
+
+        // InsertBefore();
+        // Bikin lIst item Setelah item 1 dan sebelum item 2
+        const newList = document.createElement('li');
+        const liText = document.createTextNode('Item Baru');
+        newList.appendChild(liText);
+
+        // 1. Pertama kita harus tahu parent yang ingin kita sisipkan
+        const ul = document.querySelector('section#b ul');
+
+        // 2 Kemudian tangkap elemen setelahnya
+        const li2 = ul.querySelector('li:nth-child(2)');
+
+        // 3 Lalu kita tempatkan / simpan
+        ul.insertBefore(newList, li2);
+
+        // RemoveChild();
+
+        // 1 Tangkap element yang ingin kita remove
+        const link = document.getElementsByTagName('a')[0];
+
+        // 2 kita harus tahu parentnya terlebih dahulu
+        sectionA.removeChild(link);
+
+        // replaceChild();
+
+        // 1. Tangkap element parentnya
+        const sectionB = document.getElementById('b');
+
+        // 2. Tangkap element yang ingin kita replace
+        const p4 = sectionB.querySelector('p');
+
+        // 3. Bikin Elemen Baru
+        const h2Baru = document.createElement('h2');
+        const textH2baru = document.createTextNode('Judul Baru');
+
+        // 4. simpan tulisan ke dalam h2
+        h2Baru.appendChild(textH2baru);
+
+        // 5 Replace element
+        sectionB.replaceChild(h2Baru, p4);
+
+        paragrafBaru.style.backgroundColor = 'salmon';
+        liBaru.style.backgroundColor = 'lightgreen';
+        newList.style.backgroundColor = 'lightblue';
+        h2Baru.style.backgroundColor = 'violet';
+    </script>
+</body>
+
+</html>

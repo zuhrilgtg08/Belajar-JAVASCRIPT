@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+
+<body>
+    <script>
+        // Cara untuk membuat Object pada Javascript
+        // 1. Object Literal
+        let mahasiswa1 = {
+            nama: 'Ahmad Zuhril',
+            power: 20,
+            makan: function (porsi) {
+                this.power = this.power + porsi;
+                console.log(`Selamat Makan ${this.nama}, selamat menikmati!`);
+            }
+        }
+
+        let mahasiswa2 = {
+            nama: 'Imam Dody',
+            power: 10,
+            makan: function (porsi) {
+                this.power = this.power + porsi;
+                console.log(`Selamat Makan ${this.nama}, selamat menikmati!`);
+            }
+        }
+
+        // 2. Function Declaration
+        function Mahasiswa(nama, power) {
+            let mahasiswa = {};
+            mahasiswa.nama = nama;
+            mahasiswa.power = power;
+            mahasiswa.makan = function (porsi) {
+                this.power += porsi;
+                console.log(`selamat makan ${this.nama}, selamat menikmati!`);
+            }
+            mahasiswa.main = function (jam) {
+                this.power -= jam;
+                console.log(`Selamat bermain ${this.nama}, semoga harimu menyenangkan`);
+            }
+            return mahasiswa;
+        }
+
+        let zuhril = Mahasiswa('Ahmad Zuhril', 20);
+        let ahmad = Mahasiswa('Ahmad Fahrizal', 10);
+
+        // 3. Constructor Object
+        // Menggunakan kyword new
+        function Mahasiswa(nama, power) {
+            this.nama = nama;
+            this.power = power;
+            this.makan = function (porsi) {
+                this.power += porsi;
+                console.log(`selamat menikmati ${this.nama}, selamat makan!`);
+            }
+            this.main = function (jam) {
+                this.power -= jam;
+                console.log(`selamat bermain ${this.nama}, semoga harimu menyenangkan!`);
+            }
+        }
+
+        let fahri = new Mahasiswa('Fahri', 12);
+
+        // 4. Object.create
+    </script>
+</body>
+
+</html>

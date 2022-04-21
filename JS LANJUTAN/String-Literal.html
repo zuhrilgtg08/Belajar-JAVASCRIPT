@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template String</title>
+</head>
+
+<body>
+    <script>
+        // Template Literals
+        const nama = 'Ahmad';
+        const umur = 20;
+        console.log(`Halo, nama saya ${nama}, Saya umur ${umur} tahun`);
+
+        // Embeded Expression
+        console.log(`${1 + 1}`);
+        // console.log(`${alert('halo!')}`);
+
+        const x = 10;
+        console.log(`${(x % 2 == 0) ? 'Genap' : 'Ganjil'}`);
+
+        // HTML Fragments
+        const Mahasiswa = {
+            nama: 'Ahmad Zuhril',
+            umur: 20,
+            nis: '043040023',
+            email: 'zuhril@gmail.com'
+        };
+
+        const el = `<div class="mhs">
+                <h2>${Mahasiswa.nama}<h2>
+                <span>${Mahasiswa.umur}</span>
+                <p>${Mahasiswa.nis}</p>
+                <label>${Mahasiswa.email}</label>
+            </div>`;
+
+        console.log(el);
+    </script>
+</body>
+
+</html>

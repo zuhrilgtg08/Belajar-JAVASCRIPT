@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This</title>
+</head>
+
+<body>
+    <script>
+        // KOnsep This
+        // This adalah sebuah keyword spesial yang secara otomatis didefinisikan oleh function
+
+        console.log(this == window);
+        var a = 10;
+        console.log(window.a);
+
+        function halo() {
+            console.log(this);
+            console.log('halo');
+        }
+        this.halo();
+
+        var obj = {
+            a: 10,
+            nama: 'ahmad'
+        };
+        obj.halo1 = function () {
+            console.log(this);
+            console.log('halo1');
+        }
+        obj.halo1();
+        // this mengembalikan object yang bersangkutan
+
+        function halo2() {
+            console.log(this);
+            console.log('halo2');
+        }
+        var obj2 = new halo2();
+        var obj1 = new halo2();
+        // this mengembalikan ibject yang baru dibuat
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+
+<body>
+    <script>
+        // Lexical Scope
+        function init() {
+            // let nama = 'Ahmad';
+            // let umur = 23;
+            return function (nama) {
+                // let nama = 'tes'; Bukan closures karena bukan lexical scopenya
+                // console.log(nama);
+                console.log(nama);
+            }
+            // console.dir(showNama);
+            // return showNama;
+        }
+        let coba = init();
+        coba('Zuhril');
+        coba('Ahmad');
+
+        function saySalam(waktu) {
+            return function (nama) {
+                return `Halo ${nama}, Selamat ${waktu}`;
+            }
+        }
+
+        let sayMorning = saySalam('Pagi');
+        let sayAfternoon = saySalam('Siang');
+        let sayNight = saySalam('Malam');
+
+        console.log(sayMorning('Zuhril'));
+        console.log(sayAfternoon('Nando'));
+        console.log(sayNight('Joko'));
+
+        console.dir(sayNight('Ilham'));
+
+        let add = function () {
+            let counter = 0;
+            return function () {
+                return ++counter;
+            }
+        }
+
+        let a = add();
+
+        // counter = 10;
+
+        console.log(a());
+        console.log(a());
+        console.log(a());
+
+        let plus = (function () {
+            let tambah = 0;
+            return function () {
+                return ++tambah;
+            }
+        })();
+
+        console.log(plus());
+        console.log(plus());
+
+        let ada = function (nama) {
+            return function (ket) {
+                return `Halo Atas nama ${nama}, saat ini sedang ${ket}`;
+            }
+        };
+
+        let ketSakit = ada('zuhril');
+        let ketAlpa = ada('Nando');
+        let ketIjin = ada('Akmal');
+
+        console.log(ketSakit('sakit'));
+        console.log(ketAlpa('tidak ada keterangan'));
+        console.log(ketIjin('Izin'));
+    </script>
+</body>
+
+</html>

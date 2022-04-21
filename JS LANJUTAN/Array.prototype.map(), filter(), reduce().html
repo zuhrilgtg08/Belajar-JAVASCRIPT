@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>higher order function map</title>
+</head>
+
+<body>
+    <script>
+        const angka = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
+
+        // filter mencari angka >= 3
+        const newAngka = angka.filter(function (a) {
+            return a >= 3;
+        });
+        const newAngka1 = angka.filter(a => a >= 3);
+
+        console.log(newAngka);
+
+        // map
+        // kalikan semua angka dengan 2
+        const newAngka2 = angka.map(a => a * 2);
+        console.log(angka);
+        console.log(newAngka2);
+
+        // reduce
+        // jumlahkan seleuruh element pada array
+        const newAngka3 = angka.reduce(function (accumulator, currentValue) {
+            return accumulator + currentValue;
+        });
+        const newAngka4 = angka.reduce((accumulator, currentValue) => accumulator + currentValue, 5);
+
+        console.log(newAngka4);
+
+        // method chaining 
+        // cari angka > 5, lalu kalikan 3, jumlahkan semua
+        const hasil = angka.filter(a => a > 5)
+            .map(a => a * 3)
+            .reduce((acc, cur) => acc + cur, 0);
+        console.log(hasil);
+
+
+
+
+        // dengan for
+        const angkaBaru = [];
+        for (let i = 0; i < angka.length; i++) {
+            if (angka[i] >= 3) {
+                angkaBaru.push(angka[i]);
+            }
+        }
+
+        console.log(angkaBaru);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale='.0">
+    <title>latihan 7</title>
+</head>
+
+<body>
+    <script>
+        var angka = prompt('Masukkan angka : ');
+
+        switch (angka) {
+            case '1':
+                alert('anda memasukkan angka');
+                break;
+
+            case '2':
+                alert('anda memasukkan angka 2');
+                break;
+
+            case '3':
+                alert('anda memasukkan angka 3');
+                break;
+
+            default:
+                alert('angka yang anda masukkan salah');
+                break;
+        }
+
+        var item = prompt('masukkan nama makanan / minuman : \n (cth: nasi, daging, susu, hamburger, softdrink)');
+
+        switch (item) {
+            case 'nasi':
+            case 'daging':
+            case 'susu':
+                alert('makanan / minuman SEHAT !');
+                break;
+
+            case 'hamburger':
+            case 'softdrink':
+                alert('makanan / minuman TIDAK SEHAT !');
+                break;
+
+            default:
+                alert('anda memasukkan makanan / minuman YANG SALAH');
+                break;
+        }
+    </script>
+</body>
+
+</html>

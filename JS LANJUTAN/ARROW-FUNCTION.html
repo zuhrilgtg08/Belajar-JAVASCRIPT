@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARROW-FUNCTION</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #333;
+            margin: 50px auto;
+            transition: .3s width,
+                .3s height .3s,
+                .3s margin-top .3s,
+                1s background-color;
+        }
+
+        .bunder {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #333;
+            margin: 50px auto;
+            border-radius: 50%;
+            transition: .5s width,
+                .3s height .3s,
+                .2s margin-top .2s,
+                1s background-color;
+        }
+
+        .size {
+            width: 150px;
+            height: 150px;
+            margin-top: 25px;
+        }
+
+        .caption,
+        .tes {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box"></div>
+    <div class="bunder"></div>
+
+
+    <script>
+        // Function Expression
+        const showName = function (nama) {
+            return `Halo ${nama}`;
+        }
+        console.log(showName('zuhril'));
+
+        // remake arrow function
+        const name = (name) => {
+            return `Hai ${name}`;
+        }
+        console.log(name('ahmad'));
+
+        // Jika params lebih dari 1
+        const tampilNama = (nama, waktu) => {
+            return `Selamat ${waktu}, ${nama}`;
+        }
+        console.log(tampilNama('Nando', 'Malam'));
+
+        // remake arrow function jika params 1
+        // Ini imiplisit return
+        const nama = name => `Hai ${name}`;
+        console.log(nama('ahmad'));
+
+        // Jika tanpa params
+        const aboutName = () => 'Hello world';
+        console.log(aboutName());
+
+
+        let mhs = ['Ahmad', 'Zuhril', 'Akmal'];
+        let countHuruf = mhs.map(function (huruf) {
+            return huruf.length;
+        });
+        console.log(countHuruf);
+
+        let mahasiswa2 = ['Ahmad Wahyu', 'Zuhril Fahrizal', 'Akmal Erik', 'Khotimah'];
+        let jumlahHuruf = mahasiswa2.map(huruf => huruf.length);
+        console.log(jumlahHuruf);
+
+        let mahasiswa3 = ['Ahmad', 'Zuhril', 'Akmal', 'Fahrizal', 'Wahyu Laksono'];
+        let jml = mahasiswa3.map(nama => ({
+            nama: nama,
+            jmlHuruf: nama.length
+        }));
+        console.log(jml);
+        console.table(jml);
+
+        // KOsep this pada arrow function
+        // constructor function
+        const Mahasiswabaru = function () {
+            this.nama = 'Ahmad';
+            this.umur = 20;
+            console.log(this);
+            this.halo = function () {
+                console.log(`hai nama saya ${this.nama}, dan umur saya ${this.umur} tahun`);
+            }
+        }
+
+        const ahmad1 = new Mahasiswabaru();
+
+        // arrow function
+        const newMahasiswa = function () {
+            this.nama = 'Ahmad';
+            this.umur = 20;
+            console.log(this);
+            this.halo = () => {
+                console.log(`hai nama saya ${this.nama}, dan umur saya ${this.umur} tahun`);
+            }
+        }
+
+        const ahmad2 = new newMahasiswa();
+
+        // coba pakai object literal
+        const mhs1 = {
+            nama: 'zuhril',
+            umur: 20,
+            halo: () => {
+                // console.log(`hai nama saya ${this.nama}, dan umur saya ${this.umur} tahun`);
+                console.log(this);
+            }
+        }
+
+        const Mahasiswa = function () {
+            this.nama = 'Ahmad';
+            this.umur = 20;
+            console.log(this);
+            this.halo = function () {
+                console.log(`hai nama saya ${this.nama}, dan umur saya ${this.umur} tahun`);
+            }
+
+            setInterval(() => {
+                console.log(this.umur++);
+            }, 500);
+        }
+
+        const zuhril = new Mahasiswa();
+
+        const box = document.querySelector('.box');
+        const bunder = document.querySelector('.bunder');
+
+        box.addEventListener('click', function () {
+            let size = 'size';
+            let caption = 'caption';
+
+            if (this.classList.contains(size)) {
+                [size, caption] = [caption, size];
+            }
+            this.classList.toggle(size);
+
+            setTimeout(() => {
+                this.classList.toggle(caption);
+            }, 600);
+        });
+
+        bunder.addEventListener('dblclick', () => {
+            let size = 'size';
+            let tes = 'tes';
+
+            if (bunder.classList.contains(size)) {
+                [size, tes] = [tes, size];
+            }
+
+            bunder.classList.toggle(size);
+
+            setInterval(() => {
+                bunder.classList.toggle(tes);
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>

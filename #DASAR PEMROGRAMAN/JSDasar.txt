@@ -1,0 +1,911 @@
+Dasar Pemrograman :
+Variable, tip data, pengkondisian, pengulangan, object, function, array
+Apa itu program ?
+Apa itu pemrograman ?
+Apa itu bahasa pemrograman ?
+kenapa javascript ?
+semua orang sebaiknya belajar pemrograman, dengan kita belajar pemrograman kita juga mendapatkan manfaat yang lain
+
+dengan belajar pemrograman membuat kita belajar tentang cara berfikir yang baik
+ketika kita memilki skill coding kita akan leluasa untuk berkarya membuat sebuah aplikasi yang akan menyelesaikan masalah.
+
+Pemrograman membuat kita : 
+1. belajar menjadi seorang yang teliti, disiplin dan berfikir abstrak
+2. Mengubah komputer menjadi alat yang powerfull
+3. membentuk pola pikir komputasional
+
+Apa itu pemrograman ?
+Program adalah kumpulan / serangkain instruksi terstruktur yang dirancang agar komputer dapat berperilaku sesuai dengan ketentuan, dengan tujuan untuk menyelesaikan sebuah pekerjaan
+
+Apa itu instruksi ?
+memberikan perintah pada komputer dengan menggunakan bahasa pemrograman tertentu misal:
+1. melakukan operasi matematika
+2. menampilkan tulisan ke layar
+3. mengubah ukuran, posisi atau warna dari sebuah pixel ke layar
+
+ketika kita membeikan sebuah instruksi pada komputer kita harus tahu perilaku komputer kita tersebut.
+perilaku komputer :
+1. komputer tidak terlalu pintar tapi penurut, yang pintar itu aplikasinya.
+2. tidak kenal lelah.hati hati dalam memberikan instruksi misal: kita memberikan instruksi tampilkan pesan sebanyak 10.000.000 maka akan dieksekusi perintah tersebut.
+
+statement 
+sebuah perintah unutk komputer dalam bahasa pemrograman
+setiap bahasa pemrograman memiliki aturan penulisan yang berbeda
+
+kesimpulan : apa itu pemrograman ? cara kita untuk memberikan instruksi yang simpel dan terstruktur pada komputer, instruksi yang kita berikan harus benar dan masuk akal, instruksi yang kita berikan harus sesuai dengan aturan pada bahasa pemrograman tertentu
+
+Apa itu bahasa pemrograman ?
+source code 3 hal yangg diperhatikan
+1. Bagaimana menulis source code
+    ->  menggunakan text editor
+        alert('hello world');
+        <?php
+            print "hello world";
+        ?>
+    code editor:
+    sublime text, visual studio code, atom, VIM,
+    IDE(Integrated Development Evironment)
+    Neatbeans, Code Block, PHP Storm, Visual studio
+
+2. Bagaimana source code dikonversi ke bahasa mesin
+    compiler & interpreter
+    pada umumnya dilakukan otomatis
+    mana yang lebih baik ?
+    ada yang menggabungkan 2 teknik yaitu teknik hybrid
+
+3. Bagaimana mengeksekusi source code 
+    tergatung kita juga mau bikin apa 
+
+kenapa js ?
+gratis, tidak perlu instalasi, hanya butuh web browser
+
+scripting 
+spesifik hanya dengan aplikasi web
+
+untyped
+var x = 12345; (int)
+    x = "hello world";
+    x = {hello: "world"};
+
+typed
+int x = 12345;
+    x = "hello world";
+
+interpreted
+cross platform
+client-side web Development
+vanilla js;
+jQuery
+Angular, react, ember, Backbone
+serve-side Development
+Node js
+Express js
+browser extensions / add-on
+Desktop App
+json
+
+Sejarah js?
+JavaScript pertama kali diciptakan oleh Brendan Eich, seorang karyawan Netscape, pada tahun 1995. Netscape kala itu merupakan perusahaan software ternama yang dikenal dengan web browser miliknya, Netscape Navigator Netscape kemudian bekerja sama dengan Sun (saat ini Oracle) yang kala itu memegang lisensi Java.
+
+lingkungan pengembangan ?
+
+lingkungan pengembangan pada js yaitu pada web brwser teman2 
+
+Nilai & Tipe Data js :
+semua data komputer semuanya tersimpan dalam bit.
+Bit Adalah / binary digit satua terkecil dari data yang ada dalam komputer kita, dengan nilai nya 0/1.
+ada 6 tipe data :
+number, string, bool, object, function, undefined
+
+didalam js tidak ada tipe data integer / bilangan bulat yang ada hanya floating point(pecahan)->lalu js mampu menyimpan angka sebanyak 64 bit(2^64) atau 18 x 10^18
+ada beberapa angka yang dapat kita simpan dengan js 
+pertama :
+1. bisa menyimpan angka tanpa desimal (10, 15000, 123456)->akurat sampai 15 digit
+2. bisa menyimpan angka dengan desimal (3.14, 0.5, 0.67)
+3. eksponen (123e5 // 12300000)(123e-5 // 0.00123)
+4. bilangan negatif
+
+didalam js jangan pernah mengawali angka dengan 0 hasilnya tidak sesuai dengan jawaban yang kita inginkan bilangan 00 didepan angka yang kita tulis akan dianggap sebagai bilangan oktal
+
+didalam js ada yang disebut dengan angka spesial
+yaitu : 
+1. Infinity
+2. -Infinity
+3. Nan (Not a Number);
+
+operator
+operator dalam js adalah sebuah simbol yang digunakan untuk melakukan sebuah operasi
+
+jenis jenis operator:
+     {
+        aritmatika (+, -, *, /, %)
+        penugasan (assigment =, +=, -=, *=, /=, %=)nilai yang kita isi akan dilakukan operasi terlebih dahulu, jadi tidak ditimpa, atau dihilangkan
+        perbandingan (comparison ==, !=, ===, !==, >, <, >=, <=)
+        logika (logical &&, ||, !) 
+        string(+ memiliki 2 fungsi jika oprandnya angka, jika operand nya string maka operandnya string)
+    } ==> binary (membutuhkan 2 operand)
+    kondisional ==> ternary (membutuhkan 3 operand)
+    typeof ==> unary (membutuhkan 1 operand)
+    dimana tipe data apa yang kita masukan ke dalamnya
+    typeof(operand);
+
+KUKABATAKU(kurung, kali, bagi, tambah, kurang)
+di js ada yang namanya prosedure operand dimana js melakukan operand sesuai dengan urutan operasi mana yang dikerjakan terlebih dahulu
+
+string
+tipe data string dalam js digunakan untuk merepresentasikan data tekstual / plain text
+unutk menuliskan string menggunakan tanda ("" & '')
+contoh : "Ahmad" atau 'ahmad'
+escape character berfungsi untuk menampilkan sebuah data berupa karakter yang di impresentasikan berbeda dalam bahasa pemrograman
+
+dan didalam string juga ada concatenation atau konkatenasi (penggabuangan string)
+
+dan kita juga bisa membandingkan 2 buah string dengan operator perbandingan(==)
+contoh : 
+    "Ahmad" == "ahmad" : false;
+
+dan didalam string juga terdapat sebuah function() atau fungsi yang bisa kita gunakan unutk menghitung panjang string yaitu .length();
+
+    contoh :
+        var nama = "ahmad zuhril";
+        console.log(nama.length()); //ada 12 karakter di dalamnya termasuk spasi nya juga
+
+Boolean
+sebuah tipe data yang digunakan untuk merepresentasikan logika true atau false
+George Boole adalah ahli matematika logika pada tahun 1954 dia mengemukakan boolean 
+
+di pemrograman boolean biasanya digunakan pada statement pengkondisian unutk menentukan aksi yang berbeda dan mengatur alur kendali program
+
+true | false
+
+di js ada juga sebuah function / fungsi yang digunakan untuk mengecek suatu tipe data dari sebuah nilai yang kita berikan yaitu Boolean()
+contoh:
+    boolean("ahmad") -> true
+
+di js ada table nilai yang isinya nilai dari data boolean yaitu truthy dan falsy
+
+undefined adalah sebuah tipe yang dihasilkan ketika kita mendeklarasikan sebuah variable tapi belum ada isi didalamnya
+
+Variable 
+variable adalah sebuah tempat / wadah yang memiliki
+nama, yang digunakan untuk menyimpan nilai
+ada 3 hal yang harus dipahami sebelum membuat variable
+yaitu deklarasi, inisialisasi, assigment
+1. Deklarasi, mendaftarkan variable ke dalam lingkup yang sesuai
+2. Inisialisasi, menyediakan memori untuk variable
+3. Assigment, menetapkan nilai yang spesifik ke dalam variable
+
+ada sebuah shorthand untuk memnuat sebuah variable dalam js
+contoh : var nama = "zuhril",
+             kelas = 12,
+             lulus = true;
+
+
+popup box pada js ada 3
+yaitu alert, prompt, confirm
+
+1. alert('isi nilainya');
+2. prompt('masukan nama: '); //untuk prompt memiliki nilai sesuai inputan dari user
+   contoh
+    var nama = prompt('masukkan nama' :);
+    console.log(alert(nama));
+3. confirm('kamu yakin ? ');
+    memiliki button dengan nilai true & false
+    contoh : 
+        var tes = confirm('anda yakin ?);
+        alert(tes);
+
+Alur / Control Flow Pada js
+Di dalam pemrograman ada yang disebut dengan alur / flow seperti contoh:
+Normal Flow: Apabila Program kita memiliki lebih dari satu statement, maka statement tersebut akan dieksekusi dari atas ke bawah dan kiri ke kanan (Secara prosedural);
+
+Yang kedua ada yang disebut Control Flow
+yaitu pengulangan & pengkondisian
+
+pengulangan
+di dalam pengulangan dimana pengulangan bisa diberhentikan dengan 2 cara : 
+->  diberhentikan berdasarkan kemauan si user
+->  atau kita yang nentukan batasan untuk menghentikan loppnya
+
+Tabel Penulusuran / trace tabel (dry-run test)
+var jumlahAngkot = 10;
+angkot <= jumlahAngkot     output
+  1         true            Angkot No 1 beroperasi dengan baik
+  2         true            Angkot No 2 beroperasi dengan baik
+  3         true            Angkot No 3 beroperasi dengan baik
+  11        false            Keluar Dari output
+
+Pengulangan FOR LOOP
+contoh penulisan
+    for(var i = 1; i<=10; i++){
+        console.log('hello world!');
+    }
+
+Pengkondisian
+sintaks dasar penggunaan if
+    if(kondisi){
+        aksi
+    }
+
+    if(kodisi){
+        aksi = true / false
+    }else{
+        aksi 2
+    }
+
+    if(kondis){
+        aksi
+    }else if(kodisi lain){
+
+    }else{
+
+    }
+
+switch case
+contoh :
+    switch(ekspresi){
+        case "nilai 1":
+            aksi 1;
+            break;
+        case "nilai 2":
+            aksi 2;
+            break;
+        case "nilai 3":
+            aksi n;
+            break;
+        default:
+            aksi default
+            break;
+    }
+
+Pengulangan & Pengkondisian bersarang
+latihan membuat segitiga bintang
+
+function
+function adalah kunci utama pada javascript yang membuat javascript sangat powerfull
+dari ulasan Douglas Crockford
+
+function
+1. sebuah sub-program / sub-routine yang dapat 'dipanggil di bagian lain pada program
+2. Merupakan struktur dasar pembentuk dari javascript
+3. Disebut juga sebagai prosedur (kumpulan statement unutk melakukan tugas / menghitung sebuah nilai)
+4. Untuk dapat menggunakannya, kita harus 'membuat terlebih dahulu function tersebut, lalu 'memanggilnya'
+5. Termasuk kedalam first-class object
+
+Kenapa harus membuat function ?
+1. Reusability (DRY : Do not Repeat Yourself);
+2. Dekomposisi / Abstraksi
+3. Modularitas
+
+kategori function :
+built-in function
+fungsi yang sudah dibuat oleh javascript, dan kita tinggal 'panggil saja'
+contoh : 
+    alert();
+    prompt();
+    confirm();
+    Math.random();
+    slice();
+    toString();
+
+user-defined function
+fungsi yang kita bikin sendiri
+dengan menggunakan keyword function
+nama function (optional)
+parameter / argument
+    disimpan didalam ()
+    boleh ada atau tidak, jika ada boleh lebih dari satu
+    pisahkan oleh kom(,)
+function body, 'dibungkus' dengan {}
+Dapat mengembalikan nilai (return) boleh tidak
+
+
+Ada 2 cara membuat function yaitu
+function declaration dan Expression
+
+function declaration : 
+    contoh:
+        funtion jumlahDuaBilangan(a, b){
+            var total;
+            total = a + b;
+            return total;
+        }
+
+function Expression :
+    contoh:
+        var jumlahDuaBilangan = function(a, b){
+            var total;
+            total = a + b;
+            return total;
+        }
+
+Function yang baik hanya mengerjakan 1 hal saja
+
+function 
+blok kode yang dibuat unutk melakukan tugas yang spesifik
+Memudahkan penelusuran
+Reusability
+Dapat dipanggil berulang kali
+
+function parameter dan argument
+
+Parameter : 
+    Variable yang ditulis di dalam kurung pada saat function dibuat, digunakan untuk menampung nilai yang dikirimkan saat function dipanggil
+
+Argument : 
+    Nilai yang dikirimkan ke parameter saat fungsi dipanggil
+
+Jika parameter lebih sedikit dari argument,
+maka argument kelebihannya akan diabaikan
+
+Namun apabila parameter lebih banyak dari argument, maka parameter kelebihannya akan diisi dengan nilai undefined
+
+khusus didalam javascript ada variable arguments array yang berisi nilai yang dikirimkan saat fungsi dipanggil
+
+FUNCTION REFACTORING
+ dimana membuat kode kita menjadi lebih efisien
+    contoh : 
+        function tambah(a,b){
+            return a + b;
+        }
+        console.log(tambah(2,4));
+
+function variable scope
+Bagaimana sebuah variable dapat diakses dalam program
+
+ada 2 jenis scope
+block scope vs function scope
+
+function rekursif
+dimana didalam function memanggil functionnya sendiri
+Dan rekursif harus berakhir dan menghasilkan nilai
+
+    contoh :
+        function tes(){
+            return tes();
+        }
+
+        tes();
+        terlalu banyak pemanggilan rekursif, nah untuk memberhentikan rekursifnya itu 
+kita gunakan base case / kondisi akhir dari sebuah rekursif dan menghasilkan nilai
+
+contoh lain dari rekursif yaitu Faktorial
+semua looping bisa dibuat rekursifnya, tapi tidak sebaliknya
+
+Implementasi rekursif
+Menggantikan looping
+Membuat Fibonacci
+Pencarian dan penelusuran pada struktur data list dan tree
+bahasa pemrograman yangg tidak memiliki perulangan : heskell, erlang, prolog, dll
+
+Expression vs Declaration
+Perbedaan : 
+    Funcrion Deklarasi
+        Lebih fleksibel (dapat ditulis dimanapun)
+        karena konsep Hoisting
+        Mudah dipahami
+    Function Ekspresi
+        Harus didefinisikan terlebih dahulu sebelum dipanggil
+        Lebih powerfull 
+            sebagai closure
+            sebagai argumen untuk function lain
+            IIFE(Immediately Invoked Function Expression)
+
+Array
+Artinya adalah susunan sistematis dari objek objek yang serupa atau tipe data yang digunakan unutk mendeskripsikan kumpulan elemen (nilai atau variable) yang tiap tiap elemennya memiliki index
+
+menurut saya array adalah sebuah variable yang lebih sakti karena bisa menampung lebih dari satu nilai
+
+kenapa array ? 
+    Mempermudah pengelolaan nilai / value / data
+    dalam penelusuran dan Pencarian
+    Management memori
+
+karakteristik array
+    Variable jamak, yang mempunyai banyak elemen dan diacu dengan nama yang sama
+    kumpulan pasangan key dan nilai / key & value pair
+    Key adalah index pada array dengan tipe integer yang dimulai dari 0
+    array pada javascript bertipe object
+    array pada javascript memiliki fungsi / method length unutk menghitung jumlah elemen didalamnya
+    elemen pada array boleh memiliki tipe data yang berbeda
+
+    contoh penulisan array : 
+        var binatang = [];
+        binatang = [
+            'Kucing',
+            'Kelinci',
+            'Monyet',
+            'Panda',
+            'Koala',
+            'Sapi'
+        ];
+        console.log(binatang.length);
+        console.log(binatang[4]);
+
+elemen pada array bole bertipe berbeda
+contoh: 
+    var hari = ['senin', 'selasa', 'rabu'];
+    var arr = ['zuhril', 98, 2004, true];
+    var angka = [1,33,66,7766];
+    var myFunc = function(){
+        alert('heloo');
+    }
+    var myArr = [2, 'hello', myFunc, false];
+    var myArr2 = [2,'tes',[1,2,3,6],'zuhril'];
+    bisa menyimpan array didalam array
+
+Object
+ Object pada javascript atau array yang lebih sakti
+ "In javascript, object are King. If you understand object, ypu understand javascript".
+
+ Kenapa Object ? 
+ contoh : 
+    var orang = {
+        nama : 'Ahmad',
+        kelas: '12',
+        umur: 17,
+        pekerjaan: 'Mahsiswa'
+        Ipk: function(){
+            return "hello";
+        }
+    }
+
+Mmebuat Object pada javascript ada berbagai cara yaitu : 
+1. Object Literal
+    contoh: 
+        var mhs2 = {
+            nama: 'Ahmad Nando',
+            nis: '07092004',
+            email: 'ahmadNando@gmail.com',
+            jurusan: 'Teknik Industri'
+        }
+
+2. Function Declaration
+    contoh:
+        function buatObjectBaru(nama, nis, email, jurusan) {
+            var mhs = {};
+            mhs.nama = nama;
+            mhs.nis = nis;
+            mhs.email = email;
+            mhs.jurusan = jurusan;
+            return mhs;
+        }
+
+        var mhs3 = buatObjectBaru('Nando Septian', '09082004', 'nando@gmail.com', 'Teknik Kimia');
+
+3. Constructor Function (keyword new)
+    contoh:
+            function Mahasiswa(nama, nis, email, jurusan) {
+            this.nama = nama;
+            this.nis = nis;
+            this.email = email;
+            this.jurusan = jurusan;
+        }
+
+        var mhs4 = new Mahasiswa('Akmal Luthfi', '12032004', 'akmal@gmail.com', 'Teknik Robotika');
+
+4. Object.create()
+
+this
+ This adalah sebuah keyword spesial yang secara otomatis didefinisikan oleh function
+
+Document Object Model js
+DOM adalah antarmuka pemrograman untuk HTML yang merepresentasikan halaman web, sehingga program dapat mengubah dan memanipulasi strukturnya.
+atau 
+
+Document
+Document adalah dokumen web kita 
+
+Object
+sebuah nilai atau tipe data pada javascript disetiap object ada properti dan method didalamnya
+
+Model
+merepresentasikan terhadap sesuatu
+
+atau Dom adalah representasi elemen HTML pada dokumen menjadi sebuah object
+
+Pohon hirarki Dom
+atau DOM tree
+
+window adalah object yang lebih besar datanya di browser
+
+DOM
+Antarmuka pemrograman berbasis objek yang merepresentasikan dokumen web
+DOM membuat seluruh komponen dari halaman web dapat diakses & dimanipulasi
+Komponen : elemen HTML, Atribut, Text, dll
+DOM dapat dimanipulasi (dibuat, diubah, dihapus) menggunakan javascript
+
+DOM Tree
+Dengan DOM HTML ini kita akan melihat serupa tree atau phon dari elemen-elemen HTML. Menggunakan bahasa Javascript kita dapat membaca, menulis atau memanipulasi DOM. Kita juga dapat melihat tampilan yang berbasis object atau dalam bahasa Inggris disebut Object Oriented Representation.
+Tipe tipe Node :
+    Elemen
+    Attribute
+    Text
+    CData Section
+    Entity Refrence
+    Entity
+    Processing Instruction
+    Comment
+    Document
+    Document Type
+    Document Fragmen
+    Notation
+
+Perbedaan
+Node List & HTML Colection
+Keduanya merupakan kumpulan dari Node
+Struktur datanya mirip dengan array
+NodeList dapat berisi node apapun, sedangkan HTML Colection harus berisi elemen HTML
+HTML Colection bersifat live sedangkan NodeList tidak
+
+Struktur Hierarki DOM Tree
+Root Node
+    Node yang menjadi sumber dari semua node lain di dalam DOM
+    Secara default Node tersebut adalah Document
+Parent Node
+    Node yang berada 1 tingkat diatas node yang lain
+    Body adalah parent dari h1, p, div dan a
+Child Node
+    Nosde yang berada 1 tingkat dibawah node yang lain
+    contoh : h2 adalah child dari body
+
+DOM MANIPULATION
+->Manipulasi Elemen 
+->Manipulasi Node
+
+DOM Events
+-> Events != Even
+
+Events ? 
+Event pada javascript merepresentasikan sebuah kejadian yang terjadi di dalam DOM
+
+kejadian tersebut bisa dilakukan oleh User seperti contoh : 
+    -> ketika mouse di klik 
+    -> Menginputkan form 
+    -> Atau ketika keyboard ditekan / enter
+
+Ataupun dilakukan secara otomatis oleh API 
+(Animasi selesai dijalankan, halaman selesai di load, dll);
+
+Ada beberapa cara membuat Events 
+Event Handler()
+addEventListener('event', function(){
+
+});
+DOM TRAVERSAL
+Atau disebut juga penelusuran DOM
+Pertama untuk memulai DOM Traversal kita harus menyeleksi element parent nya terlebih dahulu 
+menggunakan DOM selection
+konsep pewarisan harus paham dengan parent element, child element, dan sibllings
+(hubungan saudara);
+
+kenapa sebuah element harus di telusuri ?
+karena, dengan menggunakan DOM Traversal kodingan kita jadi lebih ringkas / praktis
+
+DOM Traversal Method List : 
+parentNode => node
+parentElement => Element
+nextSibling => node (saudara kandung dari element yang kita pilih)
+dalam kita menuliskan nextSibling yang diambil adalah node
+nextElementSibling => Element
+previousSibling => node
+previousElementSibling => Element
+
+PREVENT DEFAULT
+Bagaimana cara kita unutk mengehentikan aksi default dari element web kita
+
+Event Bubbling
+
+PROTOTYPE
+Prototype objek tersebut memiliki prototype sendiri, dan seterusnya hingga objek mencapai prototipe null. Dengan definisi, null tidak lagi memiliki prototype, dan berperan sebagai hubungan terakhir dari prototype chain. Hampir seluruh objek pada JavaScript merupakan instance dari Object dimana berada di atas prototype chain.
+
+Closures
+-> Execution Context, Hoisting, Scope
+
+Ada 2 fase pada Execution Context
+-> Creation
+-> Execution
+
+Hoisting
+
+Creation phase dalam kontext global
+ Membuat nama apapun variable, lalu diisi dengan = undefined
+ jadi, semua variable semuanya di set dulu dengan undefined
+ namun, jika ada sebuah function maka diisi dengan isi code function itu sendiri
+2 Konsep diatas disebut dengan hoisting(mengerekan/dinaikan);
+
+apa itu closures ?
+Menurut Mozila Development Network:
+-> Closures merupakan kombinasi anatara function dan lingkungan leksikal (lexical scope) di dalam function tersebut
+
+Menurut W3School:
+Closures adalah sebuah function ketika memiliki akses ke parent scopenya, meskipun parent scopenya sudah selesai di eksekusi
+
+Menurut Code Fellow:
+Closures adalah sebuah function dikembalikan oleh function yang lain, yang memiliki akses ke lingkungan saat diciptakan
+
+Menurut Techsith:
+Closures adalah sebuah function yang sebelumnya sudah memiliki data, hasil dari function yang lain
+
+innerFunction bisa memiliki akses ke parent variable nya / naik atasnya 
+
+Kenapa menggunakan Closures ? 
+Alasannya, Untuk membuat function factories
+lalu, untuk membuat seolah olah membuat private method
+
+VAR, LET, CONST 
+karena ada di dalam js ada sebuah konsep yang disebut dengan hoisting
+
+perilaku js yang menganut function scope
+
+IIFE / 
+SIAF = Self Invoking Anonymus Function
+Anonymus function itu sebuah function yang tidak bernama
+
+Immediately
+Invoked
+Function
+Expression
+
+dengan menggunakan let menganut konsep block scope bukan lagi function scope
+
+terus bedanya let dengan const apa ?
+jika kita mendefinisikan variable dan nilainya yakin kita tidak akan diubah maka gunakan const untuk mendeklarasikan variable nya, sesuai dengan nama nya const === constanta
+sebaliknya dengan let, kalau dengan let isi nilai variable nya bisa diubah, makanya ada istilah gunakan let dalam perulangan.
+
+kenapa kok const ? 
+karena untuk menimalisir perubahan state.
+
+Arrow Function() ?
+Menurut Mozila Development Network :
+Bentuk lain yang lebih ringkas dari function Expression
+
+Konsep this pada arrow function 
+contructor function
+arrow function tidak mempunyai konsep this, kecuali pada 
+lexical scopenya
+
+higher order function
+Menurut eluquoentjs :
+    function yang beroperasi pada function yang lain baik itu digunakan dalam argument, maupun sebagai return value
+    js memperlakukan function sebagai object
+
+kenapa harus menggunakan higher order function :
+ -> sebagai Abstraksi
+ -> Semakin besar sebuah program, semakin tinggi kompleksitasnya, semakin membingungkan programmernya
+ -> functional programming
+
+
+Array.prototype.map() -> memetakan
+Array.prototype.filter() -> memfilter / memecah
+Array.prototype.reduce() -> gabungkan jadi satu
+
+Template Literals / Templating string
+Template literal adalah string literal yang memungkinkan adanya expression di dalamnya
+
+hanya bisa dibuat dengan tanda back tick
+dan bisa melakukan multi-line string
+lalu dapat melakukan Embeded Expression
+dan membuat HTML Fragments
+Expression Interpolation
+Tagged Template == Bentuk yang lebih kompleks dari template literals memungkinkan kita untuk memungkinkan kita untuk membaca template literals melalui sebuah function
+
+Dengan menggunakan back tick cukup tambahkan enter tanpa menggunakan escape karakter ketika membuat enter
+
+tagged Template
+->Escaping HTML tags
+-> Translation & Internationalization
+-> Styled Components
+
+Destructuring Assigment
+Merupakan sebuah Expression pada javascript yang membuat kita dapat membongkar nilai dari array atau properti dari object kedalam variable yang terpisah
+
+cara penulisan dan definisi assigment pada array :
+const coba = ['satu', 'dua', 'tiga'];
+        const [a, b, c] = coba;
+        console.log(a);
+        console.log(b);
+        console.log(c);
+
+cara penulisan dan definisi assigment pada object :
+const mhs = {
+            nama: 'Ahmad',
+            umur: 20,
+            email: 'ahmad@gmail.com'
+        };
+
+        const {
+            nama,
+            umur,
+            email
+        } = mhs;
+        console.log(nama);
+        console.log(umur);
+        console.log(email);
+
+untuk menggunakan Destructuring assigment pada object penulisan variable harus sama dengan nama object yang dibuat
+
+Cara penulisan Destructuring Function :
+    function kalkulasi(a, b) {
+        return [a + b, a - b, a * b, a / b];
+    }
+
+    const jumlah = jumlahKali(2, 3)[0];
+    const kali = jumlahKali(2, 3)[1];
+
+    const [jumlah, kali] = jumlahKali(4, 5);
+    console.log(jumlah);
+    console.log(kali);
+
+const [tambah, kali, kurang, bagi = 'not found!'] = kalkulasi(2, 3);
+    console.log(bagi);
+
+For OF & For in
+for of :
+sebuah looping yang bisa menelusuri object yang iterables, Dimana iterables itu diantaranya :
+    String
+    Array
+    Arguments/NodeList
+    TypedArray
+    Map
+    Set
+    User-defined iterables
+
+for in :
+sebuah looping yang bisa menelusuri terhadap enumerable (properti pada object)
+
+Spread Operator
+Memecah (Expand / unpack) iterables menjadi single element
+
+kapan kita menggunakan Spread Operator ? yaitu ketika menggabungkan 2 array,
+meng-copy array
+dimana sebuah array benar benar tercopy tanpa mengubah nilai array dari parentnya
+
+Rest Parameter
+Sesuatu yang merepresentasikan argument pada function yang tidak terbatas menjadi sebuah array
+
+Asynchronous JavaScript
+Konsep Asynchronous Javascript
+Teknik teknik Asynchronous JavaScript : 
+    Callback
+    Promise
+    Ajax
+    Async & Await
+
+single thread
+Urutan eksekusi kode yang dapat dilakukan secara bebas / independent satu sama lain
+
+multi thread
+sedangkan multi thread dimana sebuah task bisa dilakukan dengan thread yang berbeda
+
+teknik blocking
+misal : sebuah task dalam pengerjaan eksekusi masih berjalan, maka task selanjutnya tidak akan dikerjakan kalau task sebelumnya belum selesai.
+
+teknik non blocking
+jika sebuah task sebelumnya masih dalam eksekusi, maka task selanjutnya bisa dikerjakan
+
+Synchronous
+dilakukan secara urutan
+
+Asynchronous + single thread = concurrency
+Asynchronous + multi thread = Parallelism
+
+kesimpulan
+single thread & multi thread
+ (lingkungan eksekusi 'task')
+blocking & non blocking
+ (Teknik 'ngoding' (IO related))
+Synchronous & Asynchronous
+ (Teknik 'ngoding' (HTTP Request Related))
+Concurrency & Parallelism
+ (lingkungan eksekusi 'Task)
+
+didalam javascript ada yang namanya V8 Engine 
+dan didalamnya V8 Engine ada yang namanya Heap Memory dan Stack Memory.
+Heap Memory => alokasi memory
+Stack Memory => Function call & Execution Context
+
+link simulasi Asynchronous Callback Event Loop
+http://latentflip.com/loupe
+
+Callback
+sebuah Function yang dikirmkan sebagai parameter pada function yang lain
+atau sebuah function yang dieksekusi setelah fungsi lain selesai dijakankan
+
+Promise
+Promise adalah sebuah janji / solusi dalam mengatasi callback hell
+Promise itu adalah sebuah object yang merepresentasikan keberhasilan atau kegagalan dari sebuah event yang Asynchronous yang akan terjadi di masa yang akan datang
+
+bisanya promise dipakai untuk merequest sebuah API
+
+dan janji ada 2 kodisi yaitu bisa 
+(terpenuhi / ingkar / waktu tunggunya)
+di javascript :
+    states (fulfilled / rejected / pending)
+    ada 3 fungsi callback untuk menjalankannya
+
+callback (resolve) = yang artinya ketika janjinya terpenuhi
+callback (reject) = jika janjinya tidak terpenuhi
+callback (finally) = waktu tunggu nya selesai
+
+di dalam Promise ada sebuah aksi yang harus dilakukan ketika janjinya terpenuhi / tidak terpenuhi
+aksi(then / catch)
+then = akan menjalankan resolve
+catch = akan menjalankan reject
+
+Fetch
+Fetch adalah sebuah API yang ada di dalam javascript modern yang tugasnya untuk mengambil data secara Asynchronous / ajax 
+atau sebuah method pada API JavaScript untuk mengambil resources dari jaringan, dan mengembalikan promise yang selesai (fullfiled) ketika ada response yang tersedia
+
+penulisan syntax
+    fetch('resources', init / konfigurasi);
+
+Resources dari fetch bisa :
+1. URL (Alamat dari sumber yang kita akan ambil)
+2. Request Object (Representasi permintaan sumber)
+
+sedangkan init optional 
+konfigurasi tambahan pada sebuah request berbentuk object : 
+Method
+Headers
+Body
+Mode
+Cache
+Referfer
+ReferrerPolicy
+Integrity
+Keepalive
+Signal
+
+Response 
+hasil dari fetch, yang berupa promise
+properti dan method
+1. Property :
+    Headers
+    Ok
+    Redirected
+    Status
+    statusText
+    type
+    URL
+    body
+
+2. Method:
+    clone()
+    error()
+    redirect()
+    blob()
+    formData()
+    json()
+    text()
+
+Fetch REFACTORING
+Fetch API menyediakan antarmuka JavaScript untuk mengakses dan memanipulasi bagian dari HTTP, seperti permintaan dan respons.Dan juga menyediakan metode fetch() global yang menyediakan cara mudah dan logis untuk mengambil Resources asinkron di seluruh jaringan / data.
+
+Async Await
+Asynchronous Function 
+Sebuah function yang bekerja secara asynchronous (melalui event loop), yang menghasilkan (implisit) promise sebagai return valuenya, tetapi cara penulisan codenya menggunakan penulisan yang synchronous (standard)
+poin utama : 
+    Fungsi yang berjalan secara asynchronous
+    Menghasilkan (implisit) promise
+    Cara penulisannya sama seperti synchronous function (function biasa)
+
+atau sebuah function dapat memiliki keyword await di dalamnya untuk memberhentikan sementara eksekusi fungsinya sambil menunggu promise-nya selesai
+
+Error Handling : Promise
+.then()
+.catch()
+
+penulisan sintaks:
+try{
+
+}catch(/params){
+
+}
+
+Timing Events Pada Javascript
+Timing Event adalah timing event yang ada pada javascript untuk mengatur sebuah event kapan kita menjalankan code pada program kita / kita dapat memanipulasi waktu kapan code kita di eksekusi
+
+ada 2 fungsi pada javascript yang dapat digunakan yaitu : setTimeOut() & setInterval()
+
+sedangkan setInterval melakukan sesuatu secara berulang ulang dengan interval waktu tertentu
